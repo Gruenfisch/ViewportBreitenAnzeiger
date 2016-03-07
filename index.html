@@ -5,7 +5,7 @@
  
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <title>Gruenfisch Webdesign</title>
+ <title>Gruenfisch Webdesign - Viewport-Größenanzeiger</title>
  <meta name="robots" content="index,follow" />
  <meta http-equiv="Content-Style-Type" content="text/css" />
  <meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -13,7 +13,7 @@
   
  <style type="text/css">
    
-  #js-viewport-breitenanzeiger
+  #js-viewport-anzeiger
    {
     position: fixed;
     top: 120px;
@@ -48,7 +48,7 @@
      ( 
       $('<div/>', // Attribute erzeugen...
        { 
-        'id': 'js-viewport-breitenanzeiger', 
+        'id': 'js-viewport-anzeiger', 
         'text': 'Warte auf Resize-Event...'       
        })
      );
@@ -56,7 +56,7 @@
     // Event-Handler (beim Ändern der Fenstergroesse Viewport-Daten in DIV-Element-Textknoten schreiben)       
     $(window).bind('resize', function () 
      {
-      $('#js-viewport-breitenanzeiger').text('Viewport: ' + 'Breite: ' + $(window).width() + ' / Höhe: ' + $(window).height() + ' Pixel') 
+      $('#js-viewport-anzeiger').text('Viewport: ' + 'Breite: ' + $(window).width() + ' / Höhe: ' + $(window).height() + ' Pixel') 
      }).trigger('resize');
       
    });
@@ -69,7 +69,7 @@
  
 <body>
  <div id="wrapper">
-  <h1>Beispiel: Viewport-Breitenanzeiger</h1>
+  <h1>Beispiel: Viewport-Größenanzeiger</h1>
   <p>
    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
@@ -103,6 +103,17 @@
    dolores et ea rebum. Stet clita kasd gubergren, no sea 
    takimata sanctus est Lorem ipsum dolor sit amet.
   </p> 
+  <p>
+   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+   eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+   sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+   Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+   ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
+   elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+   magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+   dolores et ea rebum. Stet clita kasd gubergren, no sea 
+   takimata sanctus est Lorem ipsum dolor sit amet.
+  </p>  
  </div>
 </body>
  
