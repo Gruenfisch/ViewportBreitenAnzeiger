@@ -42,21 +42,22 @@
     ////////////////////////////////////////////////////////////////////////////
     // Aktuelle Viewport-Breite und -Höhe anzeigen
     ////////////////////////////////////////////////////////////////////////////
-    $( "body" ).prepend // neues Element als erstes im Body-Tag einfuegen
+    
+    // neues Element als Anzeige-Container als erstes Element im Body-Tag einfuegen...
+    $( "body" ).prepend 
      ( 
-      $('<div/>', // DIV-Element mit Attributen und Eventhandler erzeugen
+      $('<div/>', // Attribute erzeugen...
        { 
         'id': 'js-viewport-breitenanzeiger', 
         'text': 'Warte auf Resize-Event...'       
-       }) 
+       })
      );
-  
-    // Event-Handler (beim Ändern der Fenstergroesse 
-    // Viewport-Daten in DIV-Element-Textknoten schreiben)  
-    $( window ).resize(function() 
-     { 
-      $('#js-viewport-breitenanzeiger').text('Viewport: ' + 'Breite: ' + $(window).width() + ' / Höhe: ' + $(window).height() + ' Pixel')   
-     });
+     
+    // Event-Handler (beim Ändern der Fenstergroesse Viewport-Daten in DIV-Element-Textknoten schreiben)       
+    $(window).bind('resize', function () 
+     {
+      $('#js-viewport-breitenanzeiger').text('Viewport: ' + 'Breite: ' + $(window).width() + ' / Höhe: ' + $(window).height() + ' Pixel') 
+     }).trigger('resize');
       
    });
    
